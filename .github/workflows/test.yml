@@ -23,8 +23,9 @@ jobs:
 
       - name: dvc pull
         env:
-          SSH_AUTH_SOCK: C:\Users\RUNNER~1\AppData\Local\Temp\ssh_agent.sock
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
+          ssh-add -l
           python -m pip install -U pip
           pip install asyncssh
           python test.py
