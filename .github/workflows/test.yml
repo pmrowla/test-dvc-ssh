@@ -13,7 +13,7 @@ jobs:
           mkdir -p ~/.ssh/
           ssh-keyscan -H github.com > ~/.ssh/known_hosts
 
-      - name: setup repo
+      - name: dvc pull
         uses: actions/checkout@v3
         uses: actions/setup-python@v4
         with:
@@ -22,7 +22,7 @@ jobs:
       - name: dvc pull
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      - run: |
+        run: |
           pip install -U pip
           pip install dvc
           pip freeze
