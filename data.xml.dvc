@@ -1,0 +1,11 @@
+md5: 88d205091aad38af66697208082582d7
+frozen: true
+deps:
+- path: data/data.xml
+  repo:
+    url: git@github.com:pmrowla/test-dvc-private.git
+    rev_lock: 079882fbd3281bd26983fb5768db5d4628e3a34b
+outs:
+- md5: 22a1a2931c8370d3aeedd7183606fd7f
+  size: 14445097
+  path: data.xml
