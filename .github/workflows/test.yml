@@ -1,0 +1,14 @@
+on:
+  pull_request:
+jobs:
+  dvc-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: |
+            ${{ secrets.SSH_KEY }}
+      - uses: actions/checkout@v3
+      - uses: iterative/setup-dvc@v1
+      - run: |
+        dvc pull --force --verbose
