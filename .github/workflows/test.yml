@@ -7,7 +7,7 @@ jobs:
       - uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: |
-            ${{ secrets.SSH_KEY }}
+            ${{ secrets.SSH_TEST_DVC_PRIVATE}}
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
@@ -15,6 +15,5 @@ jobs:
       - run: |
           pip install -U pip
           pip install dvc
-          pip install asyncssh==2.7.1
           pip freeze
           dvc pull --force --verbose
