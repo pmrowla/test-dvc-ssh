@@ -9,6 +9,11 @@ jobs:
           ssh-private-key: |
             ${{ secrets.SSH_KEY }}
       - uses: actions/checkout@v3
-      - uses: iterative/setup-dvc@v1
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
       - run: |
-        dvc pull --force --verbose
+          pip install -U pip
+          pip install dvc
+          pip freeze
+          dvc pull --force --verbose
