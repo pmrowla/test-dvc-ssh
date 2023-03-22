@@ -16,9 +16,8 @@ jobs:
           mkdir -p ~/.ssh/
           ssh-keyscan -H github.com > ~/.ssh/known_hosts
 
-      - name: dvc pull
-        uses: actions/checkout@v3
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
