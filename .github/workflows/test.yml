@@ -28,5 +28,6 @@ jobs:
           ssh-add -l
           python -m pip install -U pip
           pip install dvc
+          pip install git+https://github.com/iterative/scmrepo.git@refs/pull/213/merge#egg=scmrepo
           pip freeze
           dvc pull --force --verbose
