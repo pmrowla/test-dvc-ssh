@@ -27,8 +27,6 @@ jobs:
         run: |
           ssh-add -l
           python -m pip install -U pip
-          pip install asyncssh
-          python test.py
-          # pip install dvc
-          # pip freeze
-          # dvc pull --force --verbose
+          pip install dvc
+          pip freeze
+          dvc pull --force --verbose
